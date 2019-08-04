@@ -9,6 +9,7 @@
     "strictNullChecks": true,
     "noImplicitAny": true,
     "noUnusedLocals": true,
+    "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
     "target": "es6",

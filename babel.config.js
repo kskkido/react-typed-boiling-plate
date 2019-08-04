@@ -13,6 +13,9 @@ const config = _ => ({
         useBuiltIns: false,
       },
     ],
+    [
+      '@babel/preset-react',  
+    ]
   ],
   plugins: [],
 });
