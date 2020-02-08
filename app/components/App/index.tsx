@@ -1,8 +1,8 @@
 import React from 'react';
 
 const App = () => (
-  <h3>
-    Hello
-  </h3>
+  <div>
+    ITS DA APP
+  </div>
 )
 export default App;
