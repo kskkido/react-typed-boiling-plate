@@ -20,7 +20,7 @@ const ViewBoxContext = createContext<State>({
 const ViewBox: React.FC<Props> = ({ children, className, radius }) => {
   const diameter = useMemo(() => radius * 2, [radius]);
   const [{ width, height } = { width: diameter, height: diameter }, measuredRef] = useResponsiveClientRect();
-  const scale = useMemo(() => ({ scaleX: width / diameter, scaleY: height / diameter }), [diameter, width, height]);
+  const scale = useMemo(() => ({ scaleX: width / diameter, scaleY: height / diameter }), []);
 
   return (
     <ViewBoxContext.Provider value={scale}>
