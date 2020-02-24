@@ -20,10 +20,10 @@ const ViewBoxContext = createContext<State>({
 const ViewBox: React.FC<Props> = ({ children, className, radius }) => {
   const diameter = useMemo(() => radius * 2, [radius]);
   const [{ width, height } = { width: diameter, height: diameter }, measuredRef] = useResponsiveClientRect();
-  const scale = useMemo(() => ({ scaleX: width / diameter, scaleY: height / diameter }), []);
+  console.log(width, height, { scaleX: width / diameter, scaleY: height / diameter }, 'unko');
 
   return (
-    <ViewBoxContext.Provider value={scale}>
+    <ViewBoxContext.Provider value={{ scaleX: width / diameter, scaleY: height / diameter }}>
       <svg
         className={className}
         style={{ maxWidth: diameter }}
@@ -31,8 +31,9 @@ const ViewBox: React.FC<Props> = ({ children, className, radius }) => {
         width="100%"
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
+        ref={measuredRef}
       >
-        <g ref={measuredRef}>{children}</g>
+        {children}
       </svg>
     </ViewBoxContext.Provider>
   );
